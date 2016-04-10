@@ -1,0 +1,297 @@
+@import "modules/base";
+
+
+$duration: 0.5s ;
+$bc: #36ac71;
+
+body, html{
+  background-color: $bc;
+  height: 100%;
+  color:#FFf;
+  text-align: center;
+}
+
+.menu-icon{
+  margin: 25px auto;
+  position: relative;
+
+  width: 54px;
+  height: 54px;
+
+  border-radius: 50%;
+  background-color: transparent;
+  transition: transform $duration;
+
+  span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+    width : 22px;
+    height: 2px;
+
+    background-color: white;
+    transform: translateX(-50%) translateY(-50%);
+    transition:background $duration, transform $duration;
+
+    &::before, &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left:0;
+
+      display: block;
+      width: 22px;
+      height: 2px;
+
+      background-color: white;
+
+      transform: translateY(-6px);
+      transition: transform $duration;
+      transform-origin: 50% 50%;
+    }
+
+     &::after{
+       transform: translateY(6px);
+     }
+  }
+  svg{
+    fill: transparent;
+    stroke-width: 2px;
+    stroke:white;
+    stroke-dasharray:170;
+    stroke-dashoffset:170;
+    transition: stroke-dashoffset $duration , transform $duration;
+
+  }
+
+
+  &:hover{
+    cursor: pointer;
+    span::before{
+      transform: translateY(-7px);
+    }
+    span::after{
+      transform: translateY(7px);
+    }
+  }
+
+
+  &.is-opened{
+    transform: rotate(180deg);
+    span{
+      background: transparent;
+    }
+    span::before{
+      transform: translateY(0) rotate(-45deg);
+    }
+    span::after{
+      transform: translateY(0) rotate(45deg);
+    }
+    svg{
+      transform: rotate(-180deg);
+      stroke-dashoffset: 0;
+    }
+  }
+
+}
+
+.field{
+  position: relative;
+  height: 72px;
+  padding: 16px 0 8px 0;
+  width: 500px;
+  margin: auto;
+  color: black;
+
+  text-align: center;
+
+  .field-label{
+    color: #808080;
+    line-height: 16px;
+    font-size: 12px;
+    font-weight: 400;
+
+    display:block;
+    font-size: 16px;
+    position:relative;
+    margin: 0;
+
+    transform: translateY(24px);
+    transition: transform $duration, font-size $duration;
+
+  }
+  .field-input{
+
+    display: block;
+    position: relative;
+    width: 75%;
+    height:32px;
+    margin: auto;
+    padding: 8px 0;
+    text-align: center;
+
+    line-height: 16px;
+    font-family: Roboto;
+    font-size: 18px;
+    color: white;
+    background: transparent;
+    border:none;
+    -webkit-appearance:none;
+    outline: none;
+
+  }
+
+  &::after, &::before{
+    content: '';
+    height: 2px;
+    background-color: grey;
+    width: 75%;
+    margin: auto;
+    position: absolute;
+    left: 12.5%;
+    bottom: 6px;
+
+  }
+  &::after{
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform $duration;
+
+
+  }
+
+  &.is-focused{
+      .field-label{
+        color:#edd9d9;
+
+
+      }
+      &::after{
+        transform: scaleX(1);
+      }
+
+  }
+  &.has-label{
+    .field-label{
+      transform: translateY(0) ;
+      font-size:16px;
+    }
+
+  }
+
+}
+
+
+
+.button-icon{
+  margin: 25px auto;
+  position: relative;
+
+  width: 54px;
+  height: 54px;
+
+  border-radius: 50%;
+  background-color: transparent;
+  transition: transform $duration;
+
+  span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+    width : 23px;
+    height: 2px;
+
+    background-color: white;
+    transform:  translateX(-50%) translateY(-50%) ;
+    transition: transform $duration;
+
+     &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left:0;
+
+      display: block;
+      width: 23px;
+      height: 2px;
+
+      background-color: white;
+      transform: rotate(90deg);
+      transition: transform $duration;
+      transform-origin: 50% 50%;
+
+    }
+
+
+  }
+  svg{
+    fill: transparent;
+    stroke-width: 2px;
+    stroke:white;
+    stroke-dasharray:170;
+    stroke-dashoffset:170;
+    transition: stroke-dashoffset $duration , transform $duration;
+
+  }
+
+  &.is-opened{
+
+
+    span{
+      transform: translateX(-7px) rotate(-45deg);
+      transition: transform $duration;
+
+      &::after{
+        transform: rotate(90deg) translateX(-5px) translateY(6px);
+        transition: transform $duration width $duration;
+        width: 12px;
+
+      }
+    }
+    svg{
+      transform: rotate(-360deg);
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset $duration , transform $duration;
+    }
+
+  }
+
+  &.is-closed{
+    transform: rotate(180deg);
+    transition: transform $duration;
+  }
+
+}
+
+.row-anim{
+  margin:auto;
+  width: 60%;
+
+  .col-anime{
+    transition: width $duration;
+    overflow: hidden;
+    &.is-hover{
+      width: 100%;
+      transition: width $duration;
+    }
+    &.isnot-hover{
+      padding: 0;
+      width: 0%;
+      overflow: hidden;
+      transition: width $duration;
+    }
+  }
+  .col-A{
+    height: 50px;
+    background-color: #968c8c;
+  }
+  .col-B{
+    height:50px;
+    background-color: #605f63;
+
+  }
+}

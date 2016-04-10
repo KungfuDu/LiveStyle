@@ -1,0 +1,191 @@
+body, html {
+  background-color: #36ac71;
+  height: 100%;
+  color: #FFf;
+  text-align: center; }
+
+.menu-icon {
+  margin: 25px auto;
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: transform 0.5s; }
+  .menu-icon span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: white;
+    transform: translateX(-50%) translateY(-50%);
+    transition: background 0.5s, transform 0.5s; }
+    .menu-icon span::before, .menu-icon span::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: white;
+      transform: translateY(-6px);
+      transition: transform 0.5s;
+      transform-origin: 50% 50%; }
+    .menu-icon span::after {
+      transform: translateY(6px); }
+  .menu-icon svg {
+    fill: transparent;
+    stroke-width: 2px;
+    stroke: white;
+    stroke-dasharray: 170;
+    stroke-dashoffset: 170;
+    transition: stroke-dashoffset 0.5s, transform 0.5s; }
+  .menu-icon:hover {
+    cursor: pointer; }
+    .menu-icon:hover span::before {
+      transform: translateY(-7px); }
+    .menu-icon:hover span::after {
+      transform: translateY(7px); }
+  .menu-icon.is-opened {
+    transform: rotate(180deg); }
+    .menu-icon.is-opened span {
+      background: transparent; }
+    .menu-icon.is-opened span::before {
+      transform: translateY(0) rotate(-45deg); }
+    .menu-icon.is-opened span::after {
+      transform: translateY(0) rotate(45deg); }
+    .menu-icon.is-opened svg {
+      transform: rotate(-180deg);
+      stroke-dashoffset: 0; }
+
+.field {
+  position: relative;
+  height: 72px;
+  padding: 16px 0 8px 0;
+  width: 500px;
+  margin: auto;
+  color: black;
+  text-align: center; }
+  .field .field-label {
+    color: #808080;
+    line-height: 16px;
+    font-size: 12px;
+    font-weight: 400;
+    display: block;
+    font-size: 16px;
+    position: relative;
+    margin: 0;
+    transform: translateY(24px);
+    transition: transform 0.5s, font-size 0.5s; }
+  .field .field-input {
+    display: block;
+    position: relative;
+    width: 75%;
+    height: 32px;
+    margin: auto;
+    padding: 8px 0;
+    text-align: center;
+    line-height: 16px;
+    font-family: Roboto;
+    font-size: 18px;
+    color: white;
+    background: transparent;
+    border: none;
+    -webkit-appearance: none;
+    outline: none; }
+  .field::after, .field::before {
+    content: '';
+    height: 2px;
+    background-color: grey;
+    width: 75%;
+    margin: auto;
+    position: absolute;
+    left: 12.5%;
+    bottom: 6px; }
+  .field::after {
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.5s; }
+  .field.is-focused .field-label {
+    color: #edd9d9; }
+  .field.is-focused::after {
+    transform: scaleX(1); }
+  .field.has-label .field-label {
+    transform: translateY(0);
+    font-size: 16px; }
+
+.button-icon {
+  margin: 25px auto;
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: transform 0.5s; }
+  .button-icon span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 23px;
+    height: 2px;
+    background-color: white;
+    transform: translateX(-50%) translateY(-50%);
+    transition: transform 0.5s; }
+    .button-icon span::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 23px;
+      height: 2px;
+      background-color: white;
+      transform: rotate(90deg);
+      transition: transform 0.5s;
+      transform-origin: 50% 50%; }
+  .button-icon svg {
+    fill: transparent;
+    stroke-width: 2px;
+    stroke: white;
+    stroke-dasharray: 170;
+    stroke-dashoffset: 170;
+    transition: stroke-dashoffset 0.5s, transform 0.5s; }
+  .button-icon.is-opened span {
+    transform: translateX(-7px) rotate(-45deg);
+    transition: transform 0.5s; }
+    .button-icon.is-opened span::after {
+      transform: rotate(90deg) translateX(-5px) translateY(6px);
+      transition: transform 0.5s width 0.5s;
+      width: 12px; }
+  .button-icon.is-opened svg {
+    transform: rotate(-360deg);
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.5s, transform 0.5s; }
+  .button-icon.is-closed {
+    transform: rotate(180deg);
+    transition: transform 0.5s; }
+
+.row-anim {
+  margin: auto;
+  width: 60%; }
+  .row-anim .col-anime {
+    transition: width 0.5s;
+    overflow: hidden; }
+    .row-anim .col-anime.is-hover {
+      width: 100%;
+      transition: width 0.5s; }
+    .row-anim .col-anime.isnot-hover {
+      padding: 0;
+      width: 0%;
+      overflow: hidden;
+      transition: width 0.5s; }
+  .row-anim .col-A {
+    height: 50px;
+    background-color: #968c8c; }
+  .row-anim .col-B {
+    height: 50px;
+    background-color: #605f63; }

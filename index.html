@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Test LiveStyle</title>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div id="animation">
+      <h1> Animation Test</h1>
+      <div class=" text-center">
+        <div class="menu-icon">
+          <svg x="0" y="0" width="54px" viewBox="0 0 54 54">
+            <circle cx="27" cy="27" r="25"></circle>
+          </svg>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <div id="material">
+      <h1> Material Design Test</h1>
+      <div class="field">
+        <label for="" class="field-label">Nom</label>
+        <input type="text" name="" value="" class="field-input">
+      </div>
+      <div class="field">
+        <label for="" class="field-label">Prenom</label>
+        <input type="text" name="" value="" class="field-input">
+
+      </div>
+    </div>
+
+    <div id="button">
+      <h1> Button Test</h1>
+      <div class=" text-center">
+        <div class="button-icon">
+          <span></span>
+          <svg x="0" y="0" width="54px" viewBox="0 0 54 54">
+            <circle cx="27" cy="27" r="25"></circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="colAnimation">
+      <h1> Edit col animation</h1>
+        <div class="row-anim row">
+          <div class="col-anime col-xs-6 col-A">
+            <a href="{!!URL::to('passport/in_case_of_emergency/'.$user->in_case_of_emergency->id.'/remove') !!}" class="iframe">
+                            <span class="pull-left">{{ trans("site/site.remove") }}</span>
+                            <span class="pull-right"><i class="glyphicon glyphicon-trash"></i></span>
+                            <div class="clearfix"></div>
+                        </a>
+          </div>
+          <div class="col-anime col-xs-6 col-B">
+            <a href="{!!URL::to('passport/in_case_of_emergency/'.$user->in_case_of_emergency->id.'/remove') !!}" class="iframe">
+                            <span class="pull-left">{{ trans("site/site.remove") }}</span>
+                            <span class="pull-right"><i class="glyphicon glyphicon-trash"></i></span>
+                            <div class="clearfix"></div>
+                        </a>
+
+
+        </div>
+    </div>
+
+
+  </body>
+
+  <script src="js/app.js"></script>
+</html>
